@@ -1,1 +1,2 @@
-# ut-cs-383-advanced-linear-algebra
+# ALAFF
+Advanced Linear Algebra: Foundations to Frontiers (ALAFF) assignments repository
