@@ -30,13 +30,13 @@ function [ A_out, t_out ] = HLQ( A )
     % Housev( chi1, x2 ) expects x2 to be a column vector and the output
     % u2 to be a column vector.  So, you will have to do some transposition
     % wizardry...
-    [ alpha11, u2, tau1 ] = Housev( alpha11, a21 );
+    [ alpha11, u2, tau1 ] = Housev( alpha11, a12t' );
 
-    w12t = a12t + u2' * A22;
-    a12t = a12t - tau1 * w12t;
-    A22  = A22  - tau1 * ( u2 * w12t );
+    w21 = a21 + A22 * u2;
+    a21 = a21 - tau1 * w21;
+    A22 = A22  - tau1 * ( w21 * u2' );
 
-    a21  = u2;
+    a12t = u2';
       
 
     %------------------------------------------------------------%
